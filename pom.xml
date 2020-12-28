@@ -13,18 +13,23 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
     <modules>
-        <module>Generic</module>
-        <module>Generic\Facebook</module>
-        <module>Generic\CNN</module>
-        <module>Generic\Amazon</module>
-        <module>Generic/Cigna.com</module>
-        <module>Generic/Citibank</module>
+        <module>generic</module>
+        <module>cnn</module>
+        <module>amazon</module>
+        <module>cigna</module>
+        <module>citibank</module>
+        <module>facebook</module>
 
     </modules>
 
     <dependencyManagement>
 
         <dependencies>
+            <dependency>
+                <groupId>com.pnt</groupId>
+                <artifactId>generic</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
 
 
             <!-- mysql-connector-java -->
