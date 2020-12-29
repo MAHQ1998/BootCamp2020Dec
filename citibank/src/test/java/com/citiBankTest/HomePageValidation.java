@@ -1,6 +1,6 @@
-package cnn.citiBankTest;
+package com.citiBankTest;
 
-import cnn.citibank.HomePageCNN;
+import com.citibank.HomePageCNN;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;

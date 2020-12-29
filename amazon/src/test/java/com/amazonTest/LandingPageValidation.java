@@ -1,6 +1,6 @@
-package cnn.amazonTest;
+package com.amazonTest;
 
-import cnn.amazon.pages.LandingPage;
+import com.amazon.pages.LandingPage;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;

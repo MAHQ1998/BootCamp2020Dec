@@ -1,4 +1,4 @@
-package cnn.amazon.data;
+package com.amazon.data;
 
 import org.testng.annotations.DataProvider;
 

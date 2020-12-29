@@ -16,7 +16,7 @@
 
     <test name="Automation tests">
         <classes>
-            <class name="cnn.amazonTest.LandingPageValidation"/>
+            <class name="com.amazonTest.LandingPageValidation"/>
         </classes>
     </test>
 </suite>

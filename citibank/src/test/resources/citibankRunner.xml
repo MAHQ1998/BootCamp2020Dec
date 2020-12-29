@@ -16,7 +16,7 @@
 
     <test name="Automation tests">
         <classes>
-            <class name="cnn.citiBankTest.HomePageValidation"/>
+            <class name="com.citiBankTest.HomePageValidation"/>
         </classes>
     </test>
 </suite>
