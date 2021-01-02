@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pnt.automation.base.TestBase;
 
-public class LandingPageValidation extends TestBase{
+public class LandingPageValidation extends TestBase {
 
     LandingPage landingPage;
 
@@ -16,47 +16,61 @@ public class LandingPageValidation extends TestBase{
     }
 
     @Test(enabled = true)
-    public void validateUserCanMouseHoverSignIn(){
+    public void validateUserCanMouseHoverSignIn() {
         landingPage.mouseHoverActAndList();
     }
 
     @Test(enabled = true)
-    public void validateUserBeingAbleToSearchForItems(){
-        landingPage.searchForItems();
-    }
-
-    @Test(enabled =true)
-    public void validateUserBeingAbleToSelectDepartmentUnderAllDepartmentsButton(){
+    public void validateUserBeingAbleToSearchForItems() {
         landingPage.searchForItems();
     }
 
     @Test(enabled = true)
-    public void validateUserBeingAbleToClickOnSignInButtonUnderAccountsAndLists(){
+    public void validateUserBeingAbleToSelectDepartmentUnderAllDepartmentsButton() {
+
+        landingPage.searchForItems();
+    }
+
+    @Test(enabled = true)
+    public void validateUserBeingAbleToClickOnSignInButtonUnderAccountsAndLists() {
         landingPage.clickOnSignInButtonUnderAccountsAndLists();
     }
+
     @Test(enabled = true)
-    public void validateUserBeingAbleToClickOnGiftCardsUnderAmazonLogo(){
+    public void validateUserBeingAbleToClickOnGiftCardsUnderAmazonLogo() {
         landingPage.clickOnGitCardButton();
     }
 
     @Test(enabled = true)
-    public void validateUserBeingAbleMouseHoverAndClickOnWatchList(){
+    public void validateUserBeingAbleMouseHoverAndClickOnWatchList() {
         landingPage.mouseHoverAccountAndListAndClickOnWatchList();
     }
 
-    @Test(enabled = true)
-    public void validateUserBeingAbleToClickBabyRegistryUnderRegistryButton(){
+    @Test(enabled = false)
+    public void validateUserBeingAbleToClickBabyRegistryUnderRegistryButton() {
         landingPage.clickOnRegistrySendDataAndClickSearchBtn();
 
     }
 
     @Test(enabled = true)
-    public void validateUserBeingAbleToPrimeLogoUnderWholeFoods(){
+    public void validateUserBeingAbleToClickOnNewYearNewYou(){
+        landingPage.clickOnNewYearNewYou();
+
+    }
+
+    @Test(enabled = true)
+    public void validateUserBeingAbleToPrimeLogoUnderWholeFoods() {
         landingPage.clickOnwHoleFoodsMouseHoverWholeFoodsAndClickPrime();
     }
-    @Test(enabled = true)
-    public void validateUserBeingAbleToClickOnSignInToSeePersonalizedBtnBottomOfThePage(){
+
+    @Test(enabled =true)
+    public void validateUserBeingAbleToClickOnSignInToSeePersonalizedBtnBottomOfThePage() {
         landingPage.scrollDownToEndOfThePage();
 
+    }
+
+    @Test
+    public void validateUserBeingAbleToScrollDownToEndOfThePage(){
+        landingPage.scrollDownToCareersOnFooter();
     }
 }

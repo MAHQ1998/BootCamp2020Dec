@@ -9,12 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cigna.com</artifactId>
+    <artifactId>cigna</artifactId>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
-
 
     <dependencies>
         <dependency>
@@ -23,6 +22,7 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -43,12 +43,15 @@
                         <testng.dtd.http>true</testng.dtd.http>
                     </systemPropertyVariables>
                     <suiteXmlFiles>
-                        <suiteXmlFiles>src/test/resources/wayfairRunner.xml</suiteXmlFiles>
+                        <suiteXmlFiles>src/test/resources/cignaRunner.xml</suiteXmlFiles>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
+
+
 
 
 

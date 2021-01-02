@@ -1,4 +1,4 @@
-package com.citibank;
+package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -6,7 +6,7 @@ import org.testng.Assert;
 import pnt.automation.base.TestBase;
 import pnt.automation.extent.ExtentTestManager;
 
-public class HomePageCNN extends TestBase {
+public class HomePage extends TestBase {
     @FindBy(xpath = "//a[@id='creditcards']")
     public WebElement creditCards;
 
@@ -34,40 +34,51 @@ public class HomePageCNN extends TestBase {
     @FindBy(xpath = "//a[text()='Go to home affordability calculator ']")
     public WebElement homeAffCalculator;
 
-    @FindBy(xpath = "//input[@id='loanAmount']")
-    public WebElement loanAmountTab;
+    @FindBy(xpath = "//input[@id='downPayment']")
+    public WebElement downPayment;
 
-    @FindBy(xpath = "//input[@id='interestRate']")
-    public WebElement interestRate;
 
+    @FindBy(xpath = "//input[@id='grossAnnualIncome']")
+    public WebElement grossAnnualIncome;
+
+    @FindBy(xpath = "//input[@id='monthlyExpenses']")
+    public WebElement monthlyExpenses;
     @FindBy(xpath = "//select[@id='years']")
     public WebElement selectYears;
-
+    @FindBy(xpath = "//a[text()='Start Your Application']")
+    public WebElement startYourApplication;
     @FindBy(xpath = "//select[@id='paymentFrequency']")
     public WebElement paymentFreq;
-
+    @FindBy(xpath = "//h1[text()='Start Your Purchase Application']")
+    public WebElement startYourPurchaseApplication;
     @FindBy(xpath = "(//a[text()='Start Your Application'])[3]")
     public WebElement refinancingApplication;
-
-
     @FindBy(xpath = "//a[@id='investing']")
     public WebElement investing;
-
     @FindBy(xpath = "//a[@id='citigoldli']")
     public WebElement WealthManagement;
-
     @FindBy(xpath = "//li[@id='openAnAccount']")
     public WebElement openAnAccount;
-
     @FindBy(xpath = "(//span[text()='How can we help?'])[1]")
     public WebElement howCanWeHelp;
-
     @FindBy(xpath = "(//img[@alt='Search'])[1]")
     public WebElement searchIcon;
-
-
     @FindBy(xpath = "//a[@id='lending_mortcalc']")
     public WebElement mortgageCalculator;
+    @FindBy(id = "citi-autocomplete-content-searchbox-livesearch")
+    private WebElement helpSearchBarToText;
+    @FindBy(xpath = "//button[@aria-label='submit search result']")
+    private WebElement searchTabToGetHelp;
+    @FindBy(id="cxcmarketing_zelle-label")
+    private WebElement whatIsZelle;
+    @FindBy(xpath = "//input[@id='interestRate']")
+    private WebElement interestRate;
+
+
+    @FindBy(xpath = "(//a[text()='Contact Us'])[2]")
+    private WebElement contactUsOnFooter;
+    @FindBy(xpath = "//h3[text()='Most Helpful FAQs']")
+    private WebElement mostHelpfulFaqs;
 
 
     public void clickOnCreditCards() {
@@ -123,21 +134,67 @@ public class HomePageCNN extends TestBase {
         mortgageCalculator.click();
         sleepFor(2);
         homeAffCalculator.click();
-        loanAmountTab.click();
-        loanAmountTab.clear();
-        loanAmountTab.sendKeys("300,000");
+        downPayment.click();
+        downPayment.clear();
+        downPayment.sendKeys("50000");
+        sleepFor(2);
+        ExtentTestManager.log("Clicked down payment, clear, and send new data");
+        grossAnnualIncome.click();
+        grossAnnualIncome.clear();
+        grossAnnualIncome.sendKeys("100000");
+        sleepFor(2);
+        ExtentTestManager.log("Clicked gross annual income, clear, and send new data");
+        monthlyExpenses.click();
+        monthlyExpenses.clear();
+        monthlyExpenses.sendKeys("1200");
+        sleepFor(2);
+        ExtentTestManager.log("Clicked monthly expenses, clear, and send new data");
         interestRate.click();
         interestRate.clear();
-        interestRate.sendKeys("3");
-        selectInList(selectYears).selectByIndex(20);
-        selectInList(paymentFreq).selectByVisibleText("Monthly");
-        refinancingApplication.click();
+        interestRate.sendKeys("3.25");
+        sleepFor(2);
+        ExtentTestManager.log("Clicked interest Rate, clear, and send new data");
+        selectInList(selectYears).selectByVisibleText("20");
+        sleepFor(2);
+        ExtentTestManager.log("Clicked select year, ans select year from dropdown");
+        startYourApplication.click();
+        ExtentTestManager.log("clicked on start your application");
+        sleepFor(2);
+        Assert.assertTrue(startYourPurchaseApplication.isDisplayed());
+        ExtentTestManager.log("start your purchase application text displayed");
+    }
 
-        String currentUrl = TestBase.driver.getCurrentUrl();
-        String expectedUrl = " https://online.citi.com/US/JRS/portal/template.do?ID=mortgage_refinance_omr&JFP_TOKEN=PEUT65FQ";
-        Assert.assertTrue(currentUrl.contains(expectedUrl));
-        ExtentTestManager.log("Verified The Url is accurate");
+    public void clickOnInvesting() {
+        investing.click();
+        ExtentTestManager.log("clicked on Investing");
+    }
 
+    public void clickedOnWealthManagement() {
+        WealthManagement.click();
+        ExtentTestManager.log("clicked on open an account");
+    }
+
+    public void clickedOnOpenAnAccount() {
+        openAnAccount.click();
+        ExtentTestManager.log("clicked on wealth Management");
+    }
+
+    public void clickOnHowCanWeHelpAndProvideData() {
+        howCanWeHelp.click();
+        ExtentTestManager.log("clicked on how can we help");
+        helpSearchBarToText.sendKeys("how Zelle works?");
+        sleepFor(2);
+        searchTabToGetHelp.click();
+        Assert.assertTrue(whatIsZelle.isDisplayed());
+        ExtentTestManager.log("what is zelle text is displayed");
 
     }
+
+    public void clickOnContactUsOnFooter() {
+        contactUsOnFooter.click();
+        Assert.assertTrue(mostHelpfulFaqs.isDisplayed());
+        ExtentTestManager.log("Most Helpful Faqs is displayed");
+    }
+
+
 }

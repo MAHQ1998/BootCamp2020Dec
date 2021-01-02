@@ -7,11 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="amazon" />
-        <module name="cigna.com" />
+        <module name="cigna" />
         <module name="cnn" />
-        <module name="citibank" />
         <module name="Generic" />
         <module name="facebook" />
+        <module name="citibank" />
+        <module name="generic" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

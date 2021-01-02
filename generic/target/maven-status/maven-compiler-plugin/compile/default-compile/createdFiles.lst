@@ -1,3 +1,4 @@
-pnt\bootcamp\extent\ExtentManager.class
-pnt\bootcamp\base\TestBase.class
-pnt\bootcamp\extent\ExtentTestManager.class
+pnt\automation\base\TestBase$1.class
+pnt\automation\extent\ExtentTestManager.class
+pnt\automation\extent\ExtentManager.class
+pnt\automation\base\TestBase.class

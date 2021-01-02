@@ -44,7 +44,7 @@
                         <testng.dtd.http>true</testng.dtd.http>
                     </systemPropertyVariables>
                     <suiteXmlFiles>
-                        <suiteXmlFiles>src/test/resources/wayfairRunner.xml</suiteXmlFiles>
+                        <suiteXmlFiles>src/test/resources/facebookRunner.xml</suiteXmlFiles>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

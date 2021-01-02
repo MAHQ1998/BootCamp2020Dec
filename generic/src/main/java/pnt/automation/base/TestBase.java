@@ -289,11 +289,11 @@ public class TestBase {
     }
 
     //Scrolling option on the web page by horizontally and vertically
-    public void scroll(String element){
-//        JavascriptExecutor js = (JavascriptExecutor) driver;
-//        js.executeScript("arguments[0].scrollIntoView(true);", element);
+    public void scroll(WebElement element){
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,350)", "");
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript("window.scrollBy(0,350)", "");
     }
 
 

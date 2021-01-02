@@ -12,4 +12,10 @@ public class dataProvider {
     public Object[][] getCredentials() {
         return new Object[][]{{"testuser001", "testpass001"}, {"testuser002", "testpass002"}, {"testuser003", "testpass003"}};
     }
+
+    @DataProvider(name="TestData")
+    public Object[]provideSearchData(){
+        Object[]data= {"Books", "TV", "Java Books", "CellPhones"};
+        return data;
+    }
 }

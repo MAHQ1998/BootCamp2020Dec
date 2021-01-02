@@ -13,7 +13,6 @@ public class LoginPage extends TestBase {
     @FindBy(id = "pass")
     private WebElement clickPassword;
 
-
     public void ableToSignIn() {
         clickEmail.sendKeys("mohhamed_hoque1998@yahoo.com");
         ExtentTestManager.log(" Email entered in the email field");
